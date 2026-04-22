@@ -1,77 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Stoa Group | Independent Music Label & Production House</title>
-    <meta name="description" content="Official website of The Stoa Group. Independent record label and production house based in San Francisco, featuring Transcribe, Astralnaughts, and Zen Wells.">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Roboto+Mono:wght@300;400&display=swap');
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MusicReleaseLabel",
-      "name": "The Stoa Group",
-      "url": "https://thestoagroup.com",
-      "description": "An independent music production house and record label based in San Francisco, specializing in Hip-Hop and Trip-Hop.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "San Francisco",
-        "addressRegion": "CA",
-        "addressCountry": "US"
-      },
-      "founder": [
-        { "@type": "Person", "name": "Nate Ifrah", "alternateName": "Nate Rza" },
-        { "@type": "Person", "name": "DJ Chi" }
-      ],
-      "sameAs": [
-        "https://musicbrainz.org/label/dad94a2f-24f2-4001-95c1-bff5a3e5435d",
-        "https://www.twitch.tv/thestoagroup",
-        "https://linktr.ee/transcribe_music"
-      ],
-      "knowsAbout": [
-        {
-          "@type": "MusicGroup",
-          "name": "Transcribe",
-          "sameAs": "https://musicbrainz.org/artist/0ce37763-691f-4c99-9227-6773b12eeddd"
-        }
-      ]
+    :root {
+        --accent: #00ffcc;
+        --bg: #050505;
+        --surface: #121212;
     }
-    </script>
 
-    <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #0a0a0a; color: #d1d1d1; text-align: center; padding: 60px 20px; line-height: 1.6; }
-        .container { max-width: 700px; margin: auto; border: 1px solid #222; padding: 40px; border-radius: 8px; background: #111; }
-        h1 { color: #fff; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 10px; font-size: 2rem; }
-        .sub-header { color: #888; font-size: 0.9rem; margin-bottom: 30px; letter-spacing: 1px; }
-        .highlight { color: #00ffcc; font-weight: bold; }
-        .links a { color: #fff; text-decoration: none; display: block; margin: 15px 0; padding: 12px; border: 1px solid #333; border-radius: 4px; transition: 0.3s; }
-        .links a:hover { background: #222; border-color: #00ffcc; color: #00ffcc; }
-        .current-release { border: 2px solid #00ffcc; padding: 20px; border-radius: 4px; margin-bottom: 30px; }
-        .release-title { color: #00ffcc; font-size: 1.5rem; font-weight: bold; margin-bottom: 5px; }
-        .footer { margin-top: 50px; font-size: 0.75rem; color: #444; border-top: 1px solid #222; padding-top: 20px; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>The Stoa Group</h1>
-        <p class="sub-header">San Francisco | Orlando | Seattle</p>
+    body { 
+        font-family: 'Roboto Mono', monospace; 
+        background: var(--bg); 
+        background-image: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+        color: #d1d1d1; 
+        text-align: center; 
+        padding: 40px 20px; 
+        margin: 0;
+    }
 
-        <div class="current-release">
-            <div class="release-title">OUT NOW: SOUNDS OF IO</div>
-            <p>New standalone single from <span class="highlight">Transcribe</span>.</p>
-            <p style="font-size: 0.8rem; color: #777;">Engineered, Mixed, and Mastered by Nate Rza for The Stoa Group.</p>
-            <a href="https://linktr.ee/transcribe_music" style="color: #00ffcc; text-decoration: none; font-weight: bold;">Listen Now →</a>
-        </div>
+    /* Subtle CRT Scanline Effect */
+    body::before {
+        content: " ";
+        display: block;
+        position: fixed;
+        top: 0; left: 0; bottom: 0; right: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+        z-index: 2;
+        background-size: 100% 4px, 3px 100%;
+        pointer-events: none;
+    }
 
-        <div class="links">
-            <a href="https://musicbrainz.org/artist/0ce37763-691f-4c99-9227-6773b12eeddd" target="_blank">Transcribe on MusicBrainz</a>
-            <a href="https://musicbrainz.org/label/dad94a2f-24f2-4001-95c1-bff5a3e5435d" target="_blank">The Stoa Group Catalog</a>
-            <a href="https://www.twitch.tv/thestoagroup" target="_blank">The Stoa Group Twitch</a>
-        </div>
+    .container { 
+        max-width: 800px; 
+        margin: auto; 
+        position: relative;
+        z-index: 3;
+    }
 
-        <div class="footer">
-            © 2026 The Stoa Group. All Rights Reserved.
-        </div>
-    </div>
-</body>
-</html>
+    h1 { 
+        font-family: 'Syncopate', sans-serif;
+        color: #fff; 
+        letter-spacing: 8px; 
+        text-transform: uppercase; 
+        font-size: 2.5rem;
+        margin-bottom: 0;
+        text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+    }
+
+    .sub-header { 
+        color: var(--accent); 
+        font-size: 0.8rem; 
+        margin-bottom: 40px; 
+        letter-spacing: 4px;
+        text-transform: uppercase;
+    }
+
+    .card {
+        background: var(--surface);
+        border: 1px solid #222;
+        padding: 30px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        transition: border-color 0.3s ease;
+    }
+
+    .card:hover {
+        border-color: var(--accent);
+    }
+
+    .links a { 
+        color: #fff; 
+        text-decoration: none; 
+        display: block; 
+        margin: 10px 0; 
+        padding: 15px; 
+        background: rgba(255,255,255,0.03);
+        border-radius: 2px;
+        transition: all 0.2s ease;
+        border-left: 0 solid var(--accent);
+    }
+
+    .links a:hover { 
+        background: rgba(0, 255, 204, 0.1); 
+        color: var(--accent);
+        border-left: 4px solid var(--accent);
+        padding-left: 20px;
+    }
+
+    .embed-container {
+        margin: 30px 0;
+        filter: grayscale(1) contrast(1.2); /* Makes players match the site aesthetic */
+        transition: filter 0.3s ease;
+    }
+
+    .embed-container:hover {
+        filter: grayscale(0);
+    }
+
+    .footer { 
+        margin-top: 60px; 
+        font-size: 0.7rem; 
+        color: #444; 
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+</style>
