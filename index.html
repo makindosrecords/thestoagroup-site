@@ -1,107 +1,183 @@
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Roboto+Mono:wght@300;400&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Stoa Group | Independent Music Label & Production House</title>
+    <meta name="description" content="Official website of The Stoa Group. Independent record label and production house based in San Francisco.">
 
-    :root {
-        --accent: #00ffcc;
-        --bg: #050505;
-        --surface: #121212;
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicReleaseLabel",
+      "name": "The Stoa Group",
+      "url": "https://thestoagroup.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Francisco",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "founder": [
+        { "@type": "Person", "name": "Nate Ifrah", "alternateName": "Nate Rza" },
+        { "@type": "Person", "name": "DJ Chi" }
+      ],
+      "sameAs": [
+        "https://musicbrainz.org/label/dad94a2f-24f2-4001-95c1-bff5a3e5435d",
+        "https://www.twitch.tv/thestoagroup",
+        "https://linktr.ee/transcribe_music"
+      ],
+      "knowsAbout": [
+        {
+          "@type": "MusicGroup",
+          "name": "Transcribe",
+          "sameAs": "https://musicbrainz.org/artist/0ce37763-691f-4c99-9227-6773b12eeddd"
+        }
+      ]
     }
+    </script>
 
-    body { 
-        font-family: 'Roboto Mono', monospace; 
-        background: var(--bg); 
-        background-image: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
-        color: #d1d1d1; 
-        text-align: center; 
-        padding: 40px 20px; 
-        margin: 0;
-    }
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Roboto+Mono:wght@300;400&display=swap');
 
-    /* Subtle CRT Scanline Effect */
-    body::before {
-        content: " ";
-        display: block;
-        position: fixed;
-        top: 0; left: 0; bottom: 0; right: 0;
-        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-        z-index: 2;
-        background-size: 100% 4px, 3px 100%;
-        pointer-events: none;
-    }
+        :root {
+            --accent: #00ffcc;
+            --bg: #050505;
+            --surface: #121212;
+        }
 
-    .container { 
-        max-width: 800px; 
-        margin: auto; 
-        position: relative;
-        z-index: 3;
-    }
+        body { 
+            font-family: 'Roboto Mono', monospace; 
+            background: var(--bg); 
+            background-image: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+            color: #d1d1d1; 
+            text-align: center; 
+            padding: 40px 20px; 
+            margin: 0;
+            min-height: 100vh;
+        }
 
-    h1 { 
-        font-family: 'Syncopate', sans-serif;
-        color: #fff; 
-        letter-spacing: 8px; 
-        text-transform: uppercase; 
-        font-size: 2.5rem;
-        margin-bottom: 0;
-        text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
-    }
+        /* Subtle CRT Scanline Effect */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 10;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
 
-    .sub-header { 
-        color: var(--accent); 
-        font-size: 0.8rem; 
-        margin-bottom: 40px; 
-        letter-spacing: 4px;
-        text-transform: uppercase;
-    }
+        .container { 
+            max-width: 800px; 
+            margin: auto; 
+            position: relative;
+            z-index: 20;
+        }
 
-    .card {
-        background: var(--surface);
-        border: 1px solid #222;
-        padding: 30px;
-        border-radius: 4px;
-        margin-bottom: 20px;
-        transition: border-color 0.3s ease;
-    }
+        h1 { 
+            font-family: 'Syncopate', sans-serif;
+            color: #fff; 
+            letter-spacing: 8px; 
+            text-transform: uppercase; 
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            text-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+        }
 
-    .card:hover {
-        border-color: var(--accent);
-    }
+        .sub-header { 
+            color: var(--accent); 
+            font-size: 0.75rem; 
+            margin-bottom: 40px; 
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
 
-    .links a { 
-        color: #fff; 
-        text-decoration: none; 
-        display: block; 
-        margin: 10px 0; 
-        padding: 15px; 
-        background: rgba(255,255,255,0.03);
-        border-radius: 2px;
-        transition: all 0.2s ease;
-        border-left: 0 solid var(--accent);
-    }
+        .current-release {
+            background: var(--surface);
+            border: 1px solid #222;
+            padding: 35px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            transition: border-color 0.4s ease;
+        }
 
-    .links a:hover { 
-        background: rgba(0, 255, 204, 0.1); 
-        color: var(--accent);
-        border-left: 4px solid var(--accent);
-        padding-left: 20px;
-    }
+        .current-release:hover {
+            border-color: var(--accent);
+        }
 
-    .embed-container {
-        margin: 30px 0;
-        filter: grayscale(1) contrast(1.2); /* Makes players match the site aesthetic */
-        transition: filter 0.3s ease;
-    }
+        .release-tag {
+            font-size: 0.7rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
 
-    .embed-container:hover {
-        filter: grayscale(0);
-    }
+        .release-title {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-    .footer { 
-        margin-top: 60px; 
-        font-size: 0.7rem; 
-        color: #444; 
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-</style>
+        .links a { 
+            color: #fff; 
+            text-decoration: none; 
+            display: block; 
+            margin: 12px 0; 
+            padding: 18px; 
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #222;
+            border-radius: 2px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .links a:hover { 
+            background: rgba(0, 255, 204, 0.05); 
+            color: var(--accent);
+            border-color: var(--accent);
+            padding-left: 25px;
+        }
+
+        .footer { 
+            margin-top: 80px; 
+            font-size: 0.65rem; 
+            color: #444; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        hr { border: 0; border-top: 1px solid #222; margin: 40px 0; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>THE STOA GROUP</h1>
+        <div class="sub-header">San Francisco • Independent Music Production</div>
+
+        <div class="current-release">
+            <span class="release-tag">LATEST RELEASE</span>
+            <div class="release-title">SOUNDS OF IO</div>
+            <p style="margin-bottom: 25px; color: #aaa;">High-fidelity Trip-Hop from <span style="color: #fff;">Transcribe</span>.</p>
+            <a href="https://linktr.ee/transcribe_music" style="color: var(--accent); text-decoration: none; font-weight: bold; border: 1px solid var(--accent); padding: 10px 20px; border-radius: 4px;">LISTEN NOW</a>
+        </div>
+
+        <div class="links">
+            <a href="https://musicbrainz.org/artist/0ce37763-691f-4c99-9227-6773b12eeddd" target="_blank">TRANSCRIBE (MUSICBRAINZ)</a>
+            <a href="https://musicbrainz.org/label/dad94a2f-24f2-4001-95c1-bff5a3e5435d" target="_blank">THE STOA GROUP (LABEL CATALOG)</a>
+            <a href="https://www.twitch.tv/thestoagroup" target="_blank">THE STOA GROUP (TWITCH)</a>
+        </div>
+
+        <div class="footer">
+            © 2026 THE STOA GROUP | ENGINEERED IN THE SF BAY AREA
+        </div>
+    </div>
+
+</body>
+</html>
