@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Stoa Group | Independent Music Label & Production House</title>
-    <meta name="description" content="Official website of The Stoa Group. Independent record label with hubs in SF, Orlando, and Seattle.">
+    <meta name="description" content="Official hub of The Stoa Group. Independent record label featuring Transcribe, AstralNaughts, and Bandit Hands. Hubs in SF, Orlando, and Seattle.">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <script type="application/ld+json">
     {
@@ -12,7 +14,6 @@
       "@type": "MusicReleaseLabel",
       "name": "The Stoa Group",
       "url": "https://thestoagroup.com",
-      "logo": "https://thestoagroup.com/sounds-of-io.jpg",
       "genre": ["Hip-Hop", "Trip-Hop", "Electronic"],
       "founder": [
         { "@type": "Person", "name": "Nate Rza" },
@@ -22,20 +23,26 @@
         "https://musicbrainz.org/label/dad94a2f-24f2-4001-95c1-bff5a3e5435d",
         "https://www.twitch.tv/thestoagroup",
         "https://linktr.ee/transcribe_music"
+      ],
+      "knowsAbout": [
+        { "@type": "MusicGroup", "name": "Transcribe" },
+        { "@type": "MusicGroup", "name": "AstralNaughts" },
+        { "@type": "MusicGroup", "name": "Bandit Hands" }
       ]
     }
     </script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Roboto+Mono:wght@300;400&display=swap');
-        :root { --accent: #00ffcc; --bg: #050505; --surface: #121212; }
+        :root { --accent: #00ffcc; --bg: #050505; --surface: #121212; --text-dim: #888; }
         
         body { 
-            font-family: 'Roboto Mono', monospace; background: var(--bg); color: #d1d1d1; text-align: center; margin: 0; padding: 40px 20px;
+            font-family: 'Roboto Mono', monospace; background: var(--bg); color: #d1d1d1; text-align: center; margin: 0; padding: 0;
             background-image: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+            min-height: 100vh;
         }
 
-        .container { max-width: 800px; margin: auto; position: relative; z-index: 2; }
+        .container { max-width: 1000px; margin: auto; padding: 60px 20px; position: relative; z-index: 20; }
         
         /* CRT Effect Overlay */
         body::before {
@@ -45,58 +52,131 @@
             z-index: 10; background-size: 100% 4px, 3px 100%; pointer-events: none;
         }
 
-        h1 { font-family: 'Syncopate', sans-serif; color: #fff; letter-spacing: 6px; text-transform: uppercase; font-size: 2rem; margin-bottom: 5px; }
-        .sub-header { color: var(--accent); font-size: 0.7rem; margin-bottom: 40px; letter-spacing: 4px; text-transform: uppercase; }
+        header { margin-bottom: 80px; }
+        h1 { font-family: 'Syncopate', sans-serif; color: #fff; letter-spacing: 8px; text-transform: uppercase; font-size: 2.2rem; margin: 0; }
+        .sub-header { color: var(--accent); font-size: 0.75rem; letter-spacing: 4px; margin-top: 10px; }
 
-        /* Hero Image Styling */
-        .cover-art {
-            width: 100%; max-width: 400px; height: auto; border-radius: 4px; border: 1px solid #333;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 25px; transition: transform 0.3s ease;
-        }
-        .cover-art:hover { transform: scale(1.02); border-color: var(--accent); }
+        section { margin-bottom: 100px; text-align: left; }
+        h2 { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; color: #fff; border-left: 3px solid var(--accent); padding-left: 15px; margin-bottom: 40px; letter-spacing: 3px; text-transform: uppercase; }
 
-        .current-release { background: var(--surface); border: 1px solid #222; padding: 40px; border-radius: 4px; margin-bottom: 30px; }
-        
-        /* Player Styling */
-        .player-container { margin: 20px 0; border-radius: 12px; overflow: hidden; background: #000; }
+        /* FEATURED RELEASE */
+        .featured-card { background: var(--surface); border: 1px solid #222; display: flex; gap: 40px; padding: 40px; border-radius: 4px; align-items: center; }
+        .featured-img { width: 300px; height: 300px; border-radius: 2px; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .featured-info { flex: 1; }
 
-        .links a { 
-            color: #fff; text-decoration: none; display: block; margin: 12px 0; padding: 18px; 
-            background: rgba(255,255,255,0.03); border: 1px solid #222; transition: all 0.2s ease;
-        }
-        .links a:hover { background: rgba(0, 255, 204, 0.05); color: var(--accent); border-color: var(--accent); }
+        /* CATALOG GRID */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+        .grid-item { background: var(--surface); padding: 25px; border: 1px solid #222; border-radius: 2px; transition: 0.3s; text-decoration: none; color: inherit; }
+        .grid-item:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .item-artist { font-size: 0.65rem; color: var(--accent); letter-spacing: 1px; display: block; margin-bottom: 10px; }
+        .item-title { color: #fff; font-weight: bold; display: block; margin-bottom: 5px; font-size: 1rem; }
+        .item-meta { font-size: 0.7rem; color: var(--text-dim); }
 
-        .footer { margin-top: 80px; font-size: 0.65rem; color: #444; letter-spacing: 2px; }
+        /* MAILING LIST */
+        .newsletter { background: var(--accent); color: #000; padding: 50px; text-align: center; border-radius: 4px; }
+        .newsletter h2 { border: none; color: #000; text-align: center; padding: 0; margin-bottom: 15px; }
+        .btn { display: inline-block; padding: 14px 35px; background: #000; color: var(--accent); text-decoration: none; font-weight: bold; margin-top: 25px; border-radius: 2px; letter-spacing: 1px; transition: 0.2s; }
+        .btn:hover { background: #111; color: #fff; }
+
+        /* SOCIALS */
+        .social-links { display: flex; justify-content: center; gap: 40px; margin-top: 50px; }
+        .social-links a { color: #fff; font-size: 1.8rem; transition: 0.3s; }
+        .social-links a:hover { color: var(--accent); }
+
+        @media (max-width: 768px) { .featured-card { flex-direction: column; text-align: center; } }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>THE STOA GROUP</h1>
-        <div class="sub-header">San Francisco • Orlando • Seattle</div>
+        <header>
+            <h1>THE STOA GROUP</h1>
+            <div class="sub-header">SF • ORLANDO • SEATTLE</div>
+        </header>
 
-        <div class="current-release">
-            <p style="font-size: 0.7rem; color: var(--accent); letter-spacing: 2px; margin-bottom: 20px;">LATEST RELEASE</p>
-            
-            <img src="sounds-of-io.jpg" alt="Sounds of IO Cover Art" class="cover-art">
-            
-            <h2 style="color: #fff; margin-bottom: 10px;">SOUNDS OF IO</h2>
-            <p style="color: #888; font-size: 0.9rem; margin-bottom: 25px;">Standalone single by <span style="color: #fff;">Transcribe</span></p>
-
-            <div class="player-container">
-                <iframe src="https://open.spotify.com/embed/track/5zP069A3Dqzt2Xk0CfZifK?si=be48f009f5134a78?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <section>
+            <h2>LATEST RELEASE</h2>
+            <div class="featured-card">
+                <img src="sounds-of-io.jpg" alt="Sounds of IO" class="featured-img">
+                <div class="featured-info">
+                    <span style="color: var(--accent); font-size: 0.7rem; letter-spacing: 2px;">OUT NOW</span>
+                    <h3 style="color: #fff; font-size: 2rem; margin: 10px 0;">SOUNDS OF IO</h3>
+                    <p style="color: var(--text-dim); margin-bottom: 30px; line-height: 1.6;">Standalone single from <span style="color: #fff;">Transcribe</span>. A high-fidelity atmospheric journey engineered and mastered by Nate Rza.</p>
+                    <a href="https://linktr.ee/transcribe_music" class="btn">STREAM NOW</a>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="links">
-            <a href="https://linktr.ee/transcribe_music" target="_blank">STREAM / DOWNLOAD</a>
-            <a href="https://www.twitch.tv/thestoagroup" target="_blank">TWITCH (LIVE SESSIONS)</a>
-            <a href="https://musicbrainz.org/label/dad94a2f-24f2-4001-95c1-bff5a3e5435d" target="_blank">LABEL CATALOG</a>
-        </div>
+        <section>
+            <h2>LABEL CATALOG</h2>
+            <div class="grid">
+                <a href="#" class="grid-item">
+                    <span class="item-artist">TRANSCRIBE</span>
+                    <span class="item-title">BITING BULLETS</span>
+                    <span class="item-meta">ALBUM • DEBUT</span>
+                </a>
+                <a href="#" class="grid-item">
+                    <span class="item-artist">TRANSCRIBE</span>
+                    <span class="item-title">ONE TRUTH</span>
+                    <span class="item-meta">EP • 5 TRACKS</span>
+                </a>
+                <a href="#" class="grid-item">
+                    <span class="item-artist">TRANSCRIBE</span>
+                    <span class="item-title">1000 LIES</span>
+                    <span class="item-meta">EP • TRACK 01: TRAPPED</span>
+                </a>
 
-        <div class="footer">
-            © 2026 THE STOA GROUP | SF • ORLANDO • SEATTLE
-        </div>
+                <a href="#" class="grid-item">
+                    <span class="item-artist">TRANSCRIBE</span>
+                    <span class="item-title">ASCENSION</span>
+                    <span class="item-meta">SINGLE</span>
+                </a>
+                <a href="#" class="grid-item">
+                    <span class="item-artist">TRANSCRIBE</span>
+                    <span class="item-title">SAKURA</span>
+                    <span class="item-meta">SINGLE</span>
+                </a>
+
+                <a href="#" class="grid-item">
+                    <span class="item-artist">ASTRALNAUGHTS</span>
+                    <span class="item-title">DEAD & GONE</span>
+                    <span class="item-meta">SINGLE COLLECTION</span>
+                </a>
+                <a href="#" class="grid-item">
+                    <span class="item-artist">ASTRALNAUGHTS</span>
+                    <span class="item-title">CATALOG SELECTIONS</span>
+                    <span class="item-meta">4 TRACKS RELEASED</span>
+                </a>
+
+                <a href="#" class="grid-item">
+                    <span class="item-artist">BANDIT HANDS</span>
+                    <span class="item-title">BANDIT HANDS EP</span>
+                    <span class="item-meta">EP • TWITCH SESSIONS</span>
+                </a>
+                <a href="#" class="grid-item">
+                    <span class="item-artist">BANDIT HANDS</span>
+                    <span class="item-title">FREESTYLE ARCHIVE</span>
+                    <span class="item-meta">JAM PROJECT</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <h2>JOIN THE INNER CIRCLE</h2>
+            <p>Get early access to production stems, limited vinyl drops, and live session invites.</p>
+            <a href="https://linktr.ee/transcribe_music" class="btn">SUBSCRIBE</a>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://www.instagram.com/transcribe_music" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitch.tv/thestoagroup" target="_blank" title="Twitch"><i class="fab fa-twitch"></i></a>
+                <a href="https://youtube.com/@thestoagroup" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div style="margin-top: 50px; font-size: 0.65rem; color: #444; letter-spacing: 2px; text-transform: uppercase;">
+                © 2026 THE STOA GROUP | INDEPENDENT PRODUCTION HOUSE
+            </div>
+        </footer>
     </div>
 
 </body>
