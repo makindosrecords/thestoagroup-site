@@ -4,34 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Stoa Group | Independent Music Label & Production House</title>
-    <meta name="description" content="Official hub of The Stoa Group. Featuring Transcribe, AstralNaughts, and Bandit Hands. Based in SF, Orlando, and Seattle.">
+    <meta name="description" content="Official hub of The Stoa Group. Featuring Transcribe, AstralNaughts, and Bandit Hands. SF • Orlando • Seattle.">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MusicReleaseLabel",
-      "name": "The Stoa Group",
-      "url": "https://thestoagroup.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "San Francisco",
-        "addressRegion": "CA",
-        "addressCountry": "US"
-      },
-      "founder": [
-        { "@type": "Person", "name": "Nate Rza" },
-        { "@type": "Person", "name": "DJ Chi" }
-      ],
-      "sameAs": [
-        "https://musicbrainz.org/label/dad94a2f-24f2-4001-95c1-bff5a3e5435d",
-        "https://www.twitch.tv/thestoagroup",
-        "https://linktr.ee/transcribe_music"
-      ]
-    }
-    </script>
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Roboto+Mono:wght@300;400&display=swap');
         :root { --accent: #00ffcc; --bg: #050505; --surface: #121212; --text-dim: #888; }
@@ -42,12 +18,12 @@
             min-height: 100vh;
         }
 
-        /* CRT Effect Overlay */
+        /* Scanline Overlay (No-Click) */
         body::before {
             content: " "; display: block; position: fixed; top: 0; left: 0; bottom: 0; right: 0;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
                         linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 100; background-size: 100% 4px, 3px 100%; pointer-events: none;
+            z-index: 100; background-size: 100% 4px, 3px 100%; pointer-events: none; opacity: 0.3;
         }
 
         .container { max-width: 1100px; margin: auto; padding: 60px 20px; position: relative; z-index: 20; }
@@ -56,42 +32,44 @@
         h1 { font-family: 'Syncopate', sans-serif; color: #fff; letter-spacing: 10px; text-transform: uppercase; font-size: 2.2rem; margin: 0; }
         .sub-header { color: var(--accent); font-size: 0.75rem; letter-spacing: 5px; margin-top: 15px; }
 
-        /* SOCIAL HUB SECTION */
+        /* SOCIAL COMMAND CENTER */
         .social-hub { display: flex; justify-content: center; gap: 15px; margin-bottom: 80px; flex-wrap: wrap; }
         .social-btn { 
-            background: var(--surface); border: 1px solid #222; padding: 12px 20px; border-radius: 4px;
+            background: var(--surface); border: 1px solid #222; padding: 12px 25px; border-radius: 4px;
             color: #fff; text-decoration: none; font-size: 0.8rem; display: flex; align-items: center; gap: 10px; transition: 0.3s;
+            font-weight: bold; letter-spacing: 1px;
         }
         .social-btn i { color: var(--accent); font-size: 1.1rem; }
-        .social-btn:hover { border-color: var(--accent); background: rgba(0, 255, 204, 0.05); transform: translateY(-3px); }
+        .social-btn:hover { border-color: var(--accent); background: rgba(0, 255, 204, 0.1); transform: translateY(-3px); }
 
         section { margin-bottom: 120px; text-align: left; }
         h2 { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; color: #fff; border-left: 4px solid var(--accent); padding-left: 20px; margin-bottom: 50px; letter-spacing: 4px; text-transform: uppercase; }
 
         /* CATALOG GRIDS */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; }
-        .grid-item { background: var(--surface); border: 1px solid #222; border-radius: 4px; overflow: hidden; transition: 0.3s; position: relative; }
+        .grid-item { background: var(--surface); border: 1px solid #222; border-radius: 4px; overflow: hidden; transition: 0.3s; }
         .grid-item:hover { border-color: var(--accent); box-shadow: 0 10px 30px rgba(0, 255, 204, 0.1); }
         
-        .art-link { display: block; position: relative; width: 100%; aspect-ratio: 1/1; background: #000; overflow: hidden; }
-        .grid-item img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.4) contrast(1.1); transition: 0.5s; }
+        .art-link { display: block; width: 100%; aspect-ratio: 1/1; background: #000; overflow: hidden; border-bottom: 1px solid #222; }
+        .grid-item img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.5) contrast(1.1); transition: 0.5s; }
         .grid-item:hover img { filter: grayscale(0) contrast(1); transform: scale(1.05); }
 
-        .info { padding: 20px; border-bottom: 1px solid #222; }
+        .info { padding: 15px; text-align: left; }
         .artist-tag { font-size: 0.55rem; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px; }
         .title { color: #fff; font-weight: bold; font-size: 0.9rem; display: block; }
         
-        /* PLAYER EMBED */
         .player-wrap { padding: 10px; background: #000; }
-        .player-wrap iframe { border-radius: 8px; filter: grayscale(1) brightness(0.8); transition: 0.3s; }
-        .grid-item:hover iframe { filter: grayscale(0) brightness(1); }
+        .player-wrap iframe { border-radius: 8px; filter: contrast(1.1); }
+
+        .bc-btn { display: block; width: 100%; padding: 15px; background: #629aa9; color: #fff; text-decoration: none; text-align: center; font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; }
+        .bc-btn:hover { background: #77b1c1; }
 
         /* VIDEO SECTION */
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
         .video-item { background: #000; border: 1px solid #222; border-radius: 4px; overflow: hidden; }
         .video-item iframe { width: 100%; aspect-ratio: 16/9; border: none; }
 
-        footer { margin-top: 100px; padding-top: 40px; border-top: 1px solid #222; font-size: 0.65rem; color: #444; letter-spacing: 2px; }
+        footer { margin-top: 100px; padding: 40px 0; border-top: 1px solid #222; font-size: 0.65rem; color: #444; letter-spacing: 2px; }
     </style>
 </head>
 <body>
@@ -110,7 +88,7 @@
         </div>
 
         <section>
-            <h2>TRANSCRIBE</h2>
+            <h2>TRANSCRIBE CATALOG</h2>
             <div class="grid">
                 <div class="grid-item">
                     <a href="https://open.spotify.com/album/0mDj4fb7CUPkSE8I8zHt37?si=z-4_v6FqSvWFOfmRhkwWMQ" class="art-link" target="_blank"><img src="sounds-of-io.jpg" alt="Sounds of IO"></a>
@@ -118,19 +96,9 @@
                     <div class="player-wrap"><iframe src="https://open.spotify.com/embed/track/YOUR_ID_3" width="100%" height="80" frameBorder="0" allow="encrypted-media" loading="lazy"></iframe></div>
                 </div>
                 <div class="grid-item">
-                    <a href="https://open.spotify.com/track/1SFWCj19SwRHAhnqVynU2L?si=a4b8166106b54032" class="art-link" target="_blank"><img src="biting-bullets.jpg" alt="Biting Bullets"></a>
-                    <div class="info"><span class="artist-tag">ALBUM</span><span class="title">BITING BULLETS</span></div>
-                    <div class="player-wrap"><iframe src="https://open.spotify.com/embed/album/YOUR_ID_4" width="100%" height="80" frameBorder="0" allow="encrypted-media" loading="lazy"></iframe></div>
-                </div>
-                <div class="grid-item">
-                    <a href="https://open.spotify.com/track/3Cu2QouuGjc5YwFuLlLVxV?si=e29857aea80746de" class="art-link" target="_blank"><img src="one-truth.jpg" alt="One Truth"></a>
+                    <a href="https://open.spotify.com/embed/track/[ID]" class="art-link" target="_blank"><img src="one-truth.jpg" alt="One Truth EP"></a>
                     <div class="info"><span class="artist-tag">EP</span><span class="title">ONE TRUTH</span></div>
                     <div class="player-wrap"><iframe src="https://open.spotify.com/embed/album/YOUR_ID_5" width="100%" height="80" frameBorder="0" allow="encrypted-media" loading="lazy"></iframe></div>
-                </div>
-                <div class="grid-item">
-                    <a href="https://open.spotify.com/track/2A1RDJ85GrbWn9UHtJok7n?si=f5226d6249c34aa2" class="art-link" target="_blank"><img src="ascension.jpg" alt="Ascension"></a>
-                    <div class="info"><span class="artist-tag">SINGLE</span><span class="title">ASCENSION</span></div>
-                    <div class="player-wrap"><iframe src="https://open.spotify.com/embed/track/YOUR_ID_6" width="100%" height="80" frameBorder="0" allow="encrypted-media" loading="lazy"></iframe></div>
                 </div>
                 <div class="grid-item">
                     <a href="https://open.spotify.com/track/3hhG0AMzk4KzAf9mgZimux?si=1374442e6f98424a" class="art-link" target="_blank"><img src="trapped.jpg" alt="Trapped"></a>
@@ -143,14 +111,24 @@
                     <div class="player-wrap"><iframe src="https://open.spotify.com/embed/track/YOUR_ID_8" width="100%" height="80" frameBorder="0" allow="encrypted-media" loading="lazy"></iframe></div>
                 </div>
                 <div class="grid-item">
+                    <a href="https://transcribe.bandcamp.com" class="art-link" target="_blank"><img src="biting-bullets.jpg" alt="Biting Bullets"></a>
+                    <div class="info"><span class="artist-tag">ALBUM</span><span class="title">BITING BULLETS</span></div>
+                    <a href="https://transcribe.bandcamp.com" class="bc-btn" target="_blank"><i class="fab fa-bandcamp"></i> BUY ON BANDCAMP</a>
+                </div>
+                <div class="grid-item">
+                    <a href="https://transcribe.bandcamp.com" class="art-link" target="_blank"><img src="ascension.jpg" alt="Ascension"></a>
+                    <div class="info"><span class="artist-tag">SINGLE</span><span class="title">ASCENSION</span></div>
+                    <a href="https://transcribe.bandcamp.com" class="bc-btn" target="_blank"><i class="fab fa-bandcamp"></i> BUY ON BANDCAMP</a>
+                </div>
+                <div class="grid-item">
+                    <a href="https://open.spotify.com/track/3Cu2QouuGjc5YwFuLlLVxV?si=e29857aea80746de" class="art-link" target="_blank"><img src="signals.jpg" alt="Signals"></a>
+                    <div class="info"><span class="artist-tag">SINGLE</span><span class="title">SIGNALS</span></div>
+                    <div class="player-wrap"><iframe src="https://open.spotify.com/embed/track/YOUR_ID_6" width="100%" height="80" frameBorder="0" allow="encrypted-media" loading="lazy"></iframe></div>
+                </div>
+                <div class="grid-item">
                     <a href="https://open.spotify.com/track/0kJhcws7ZpUnc13gPcnm0A?si=a27fbc016927478f" class="art-link" target="_blank"><img src="brain-chip.jpg" alt="Brain Chip"></a>
                     <div class="info"><span class="artist-tag">SINGLE</span><span class="title">BRAIN CHIP</span></div>
                     <div class="player-wrap"><iframe src="https://open.spotify.com/embed/track/YOUR_ID_9" width="100%" height="80" frameBorder="0" allow="encrypted-media" loading="lazy"></iframe></div>
-                </div>
-                <div class="grid-item">
-                    <a href="https://open.spotify.com/track/5zP069A3Dqzt2Xk0CfZifK?si=1479ca064e3e435e" class="art-link" target="_blank"><img src="psilocybin-scifi.jpg" alt="Psilocybin Sci-Fi"></a>
-                    <div class="info"><span class="artist-tag">SINGLE</span><span class="title">PSILOCYBIN SCI-FI</span></div>
-                    <div class="player-wrap"><iframe src="https://open.spotify.com/embed/track/YOUR_ID_10" width="100%" height="80" frameBorder="0" allow="encrypted-media" loading="lazy"></iframe></div>
                 </div>
             </div>
         </section>
@@ -193,7 +171,7 @@
         </section>
 
         <section>
-            <h2>LABEL VISUALS</h2>
+            <h2>VISUALS</h2>
             <div class="video-grid">
                 <div class="video-item"><iframe src="https://www.youtube.com/embed/f_mgBNjIzHo" allowfullscreen loading="lazy"></iframe></div>
                 <div class="video-item"><iframe src="https://www.youtube.com/embed/DFfAxd5tesA" allowfullscreen loading="lazy"></iframe></div>
